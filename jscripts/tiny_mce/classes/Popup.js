@@ -187,6 +187,7 @@ tinyMCEPopup = {
 	 * @method requireLangPack
 	 */
 	requireLangPack : function() {
+        return; // not needed in Moodle - we load all lang packs in one request
 		var t = this, u = t.getWindowArg('plugin_url') || t.getWindowArg('theme_url');
 
 		if (u && t.editor.settings.language && t.features.translate_i18n !== false) {
@@ -282,7 +283,7 @@ tinyMCEPopup = {
 			close();
 	},
 
-	// Internal functions	
+	// Internal functions
 
 	_restoreSelection : function() {
 		var e = window.event.srcElement;

@@ -50,6 +50,7 @@
 		 * @param {String} n Short name of the add-on.
 		 */
 		requireLangPack : function(n) {
+            return; // not needed in Moodle - we load all lang packs in one request
 			var s = tinymce.settings;
 
 			if (s && s.language)
