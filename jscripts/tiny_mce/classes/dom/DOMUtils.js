@@ -73,8 +73,8 @@
 			t.files = {};
 			t.cssFlicker = false;
 			t.counter = 0;
-			t.boxModel = !tinymce.isIE || d.compatMode == "CSS1Compat"; 
 			t.stdMode = d.documentMode >= 8;
+			t.boxModel = !tinymce.isIE || d.compatMode == "CSS1Compat" || t.stdMode;
 
 			t.settings = s = tinymce.extend({
 				keep_values : false,
@@ -1704,7 +1704,7 @@
 
 									// Remove everything but class name
 									ov = v;
-									v = tinymce._replace(/.*\.([a-z0-9_\-]+).*/i, '$1', h);
+									v = tinymce._replace(/.*\.([a-z0-9_\-]+).*/i, '$1', v);
 
 									// Filter classes
 									if (f && !(v = f(v, ov)))
