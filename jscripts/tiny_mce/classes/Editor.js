@@ -24,20 +24,20 @@
 	 * @example
 	 * // Add a class to all paragraphs in the editor.
 	 * tinyMCE.activeEditor.dom.addClass(tinyMCE.activeEditor.dom.select('p'), 'someclass');
-	 *
+	 * 
 	 * // Gets the current editors selection as text
 	 * tinyMCE.activeEditor.selection.getContent({format : 'text'});
-	 *
+	 * 
 	 * // Creates a new editor instance
 	 * var ed = new tinymce.Editor('textareaid', {
 	 *     some_setting : 1
 	 * });
-	 *
+	 * 
 	 * // Select each item the user clicks on
 	 * ed.onClick.add(function(ed, e) {
 	 *     ed.selection.select(e.target);
 	 * });
-	 *
+	 * 
 	 * ed.render();
 	 */
 	tinymce.create('tinymce.Editor', {
@@ -54,7 +54,7 @@
 			var t = this;
 
 			/**
-			 * Editor instance id, normally the same as the div/textarea that was replaced.
+			 * Editor instance id, normally the same as the div/textarea that was replaced. 
 			 *
 			 * @property id
 			 * @type String
@@ -66,7 +66,7 @@
 			t.queryValueCommands = {};
 
 			/**
-			 * State to force the editor to return false on a isDirty call.
+			 * State to force the editor to return false on a isDirty call. 
 			 *
 			 * @property isNotDirty
 			 * @type Boolean
@@ -594,7 +594,7 @@
 			tinymce.add(t);
 
 			/**
-			 * Reference to the theme instance that was used to generate the UI.
+			 * Reference to the theme instance that was used to generate the UI. 
 			 *
 			 * @property theme
 			 * @type tinymce.Theme
@@ -758,7 +758,7 @@
 				if (isIE || (tinymce.isOpera && parseFloat(opera.version()) >= 9.5))
 					u = 'javascript:(function(){document.open();document.domain="' + document.domain + '";var ed = window.parent.tinyMCE.get("' + t.id + '");document.write(ed.iframeHTML);document.close();ed.setupIframe();})()';
 				else if (tinymce.isOpera)
-					u = 'javascript:(function(){document.open();document.domain="' + document.domain + '";document.close();ed.setupIframe();})()';
+					u = 'javascript:(function(){document.open();document.domain="' + document.domain + '";document.close();ed.setupIframe();})()';					
 			}
 
 			// Create iframe
@@ -942,7 +942,7 @@
 			t.formatter.register(t.settings.formats);
 
 			/**
-			 * Undo manager instance, responsible for handling undo levels.
+			 * Undo manager instance, responsible for handling undo levels. 
 			 *
 			 * @property undoManager
 			 * @type tinymce.UndoManager
@@ -1106,7 +1106,7 @@
 					if (o.set)
 						o.content = t.execCallback('cleanup_callback', 'insert_to_editor', o.content, o);
 
-					if (o.get)
+					if (o.get)						
 						o.content = t.execCallback('cleanup_callback', 'get_from_editor', o.content, o);
 				});
 			}
@@ -1202,7 +1202,7 @@
 					}, 100);
 				}
 			}, 1);
-
+	
 			e = null;
 		},
 
