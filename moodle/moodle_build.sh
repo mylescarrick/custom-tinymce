@@ -39,6 +39,9 @@ cd $SOURCEDIR/moodle/plugins/moodlenolink
 java -jar $SOURCEDIR/tools/ant/yuicompressor.jar --line-break 1000 editor_plugin_src.js -o editor_plugin.js
 cp -R $SOURCEDIR/moodle/plugins/moodlenolink $TARGETDIR/plugins
 
+cd $SOURCEDIR/moodle/plugins/moodleemoticon
+java -jar $SOURCEDIR/tools/ant/yuicompressor.jar --line-break 1000 editor_plugin_src.js -o editor_plugin.js
+cp -R $SOURCEDIR/moodle/plugins/moodleemoticon $TARGETDIR/plugins
 
 
 #replace spell plugin with our modified version from different repo
