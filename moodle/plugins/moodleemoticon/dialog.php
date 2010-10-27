@@ -39,8 +39,8 @@ $stringmanager = get_string_manager();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title><?php print_string('insertsmile', 'editor'); ?></title>
-	<script type="text/javascript" src="../../tiny_mce_popup.js?v={tinymce_version}"></script>
-	<script type="text/javascript" src="js/dialog.js?v={tinymce_version}"></script>
+    <script type="text/javascript" src="../../tiny_mce_popup.js?v={tinymce_version}"></script>
+    <script type="text/javascript" src="js/dialog.js?v={tinymce_version}"></script>
 </head>
 <body>
 
@@ -78,9 +78,9 @@ foreach ($emoticons as $emoticon) {
 ?>
     </table>
 
-	<div class="mceActionPanel">
-		<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
-	</div>
+    <div class="mceActionPanel">
+        <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+    </div>
 
 </body>
 </html>
