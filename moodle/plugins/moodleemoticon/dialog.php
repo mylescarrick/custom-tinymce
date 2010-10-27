@@ -38,7 +38,7 @@ $stringmanager = get_string_manager();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title><?php print_string('insertsmile', 'editor'); ?></title>
+    <title><?php print_string('moodleemoticon:desc', 'editor_tinymce'); ?></title>
     <script type="text/javascript" src="../../tiny_mce_popup.js?v={tinymce_version}"></script>
     <script type="text/javascript" src="js/dialog.js?v={tinymce_version}"></script>
 </head>
