@@ -28,8 +28,9 @@
 		init : function(ed, url) {
 			// Register the command so that it can be invoked by using tinyMCE.activeEditor.execCommand('mceMoodleEmoticon');
 			ed.addCommand('mceMoodleEmoticon', function() {
+                lang = ed.getParam('language');
 				ed.windowManager.open({
-					file : url + '/dialog.php',
+					file : url + '/dialog.php?lang=' + lang ,
 					width : 250 + parseInt(ed.getLang('moodleemoticon.delta_width', 0)),
 					height : 400 + parseInt(ed.getLang('moodleemoticon.delta_height', 0)),
 					inline : 1
