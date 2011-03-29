@@ -19,16 +19,33 @@
 			// Register the command so that it can be invoked by using tinyMCE.activeEditor.execCommand('mcemoodlenolink');
 			ed.addCommand('mcemoodlenolink', function() {
                 var n, p;
-               
+
                 n = ed.selection.getNode();
-                p = ed.dom.getParent(n, function(t) { 
-                    return ed.dom.getAttrib(t, 'class') == 'nolink';
-                });
+
+                // look for nolink in the selected element or its parent
+                if (ed.dom.is(n, 'span.nolink')) {
+                    p = n;
+                } else {
+                    p = ed.dom.getParent(n, function(t) {
+                        return ed.dom.getAttrib(t, 'class') == 'nolink'
+                    });
+                }
 
                 if (p) {
                     ed.dom.remove(p, true);
                 } else {
-                    ed.selection.setContent('<span class="nolink">' + ed.selection.getContent() + '</span>');
+
+                    //remove any nolinks _below_ this point
+                    ed.dom.remove(ed.dom.select('span.nolink', n), true);
+
+                    //now add the nolink - around an <a> or a selection containing non block-level elements
+                    if (ed.dom.is(n, 'a')) {
+                        ed.dom.setOuterHTML(n, '<span class="nolink">' + ed.serializer.serialize(n) + '</span>');
+                    } else {
+                        if (ed.dom.select('p, div, h1, h2, h3, h4, h5, h6, ol, ul, table, pre', n).length == 0) {
+                            ed.selection.setContent('<span class="nolink">' + ed.selection.getContent() + '</span>');
+                        }
+                    }
                 }
 
 			});
